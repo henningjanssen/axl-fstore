@@ -1,0 +1,15 @@
+{
+  "vendor":{
+    "name":"AXL",
+    "website":"https://github.com/henningjanssen"
+  },
+  "module":{
+    "name":"fstore",
+    "description":"Store files in the database and assign a group",
+    "website":"https://github.com/henningjanssen/axl-fstore"
+  },
+  "install":{
+    "class":"\\axl\\fstore\\ModControl",
+    "file":"ModControl.php"
+  }
+}
