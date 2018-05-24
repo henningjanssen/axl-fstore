@@ -31,7 +31,7 @@ class ModControl implements \axolotl\module\ModuleControl {
 	}
 
   public function getRoutings(): array{
-    $ns = '\axl\articular\control';
+    $ns = '\axl\fstore\control';
 
     return array(
       RoutingInfo::newInstance('/', "$ns\\FileListControl", array('GET')),
@@ -40,10 +40,13 @@ class ModControl implements \axolotl\module\ModuleControl {
         '/files/{group}[/]', "$ns\\FileListControl", array('GET')
       ),
       RoutingInfo::newInstance(
-        '/file/{id}[/]', "$ns\\FileControl", array('GET', 'POST')
-      )
-      RoutingInfo::newInstance(
         '/file/new[/]', "$ns\\FileControl", array('GET', 'POST')
+      ),
+      RoutingInfo::newInstance(
+        '/file/{id:\d+}[/]', "$ns\\FileControl", array('GET', 'POST')
+      ),
+      RoutingInfo::newInstance(
+        '/file/{id:\d+}/download[/]', "$ns\\DownloadControl", array('GET')
       )
     );
   }
@@ -53,7 +56,7 @@ class ModControl implements \axolotl\module\ModuleControl {
     $em = Doctrine::getEntityManager();
     $schemaTool = new SchemaTool($em);
     $classes = array(
-      //$em->getClassMetadata('axl\fstore\model\File'),
+      $em->getClassMetadata('axl\fstore\model\File')
     );
     return array($schemaTool, $classes);
   }

@@ -1,2 +1,18 @@
 {
+  "file":{
+    "id": "ID",
+    "title": "Title",
+    "name": "Name",
+    "group": "Group"
+  },
+  "filelist":{
+    "title": "Files",
+    "createfile": "Create new file",
+    "nofiles": "There are no stored files."
+  },
+  "fileview":{
+    "title": "View File",
+    "upload": "Upload",
+    "download": "Download"
+  }
 }

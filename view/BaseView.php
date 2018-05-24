@@ -20,5 +20,6 @@ abstract class BaseView extends PageView{
   public function preRender(): void{
     $this->vars['moduri'] = $this->moduri;
     $this->vars['staticuri'] = $this->staticuri;
+    $this->vars['i18nMod'] = 'axl__fstore';
   }
 }

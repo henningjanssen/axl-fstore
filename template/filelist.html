@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+<table class="table table-striped table-hover table-responsive">
+  <thead>
+    <tr>
+      <td data-i18n="axl__fstore:file.id"></td>
+      <td data-i18n="axl__fstore:file.title"></td>
+      <td data-i18n="axl__fstore:file.name"></td>
+      <td data-i18n="axl__fstore:file.group"></td>
+      <td></td>
+    </tr>
+  </thead>
+  <tbody>
+    {% for file in files %}
+    <tr>
+      <td>{{file.id}}</td>
+      <td>{{file.title}}</td>
+      <td>{{file.name}}</td>
+      <td>{{file.group}}</td>
+      <td>
+        <a href="{{moduri}}/file/{{file.id}}"><i class="material-icons">forward</i></a>
+        <a href="{{moduri}}/file/{{file.id}}/download"><i class="material-icons">download</i></a>
+      </td>
+    </tr>
+    {% else %}
+    <tr>
+      <td></td>
+      <td colspan="3" data-i18n="axl__fstore:filelist.nofiles"></td>
+      <td></td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+<a href="{{moduri}}/file/new" data-i18n="axl__fstore:filelist.createfile" class="btn btn-primary" role="button"></a>
+{% endblock %}
