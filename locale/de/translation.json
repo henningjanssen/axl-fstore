@@ -1,0 +1,22 @@
+{
+  "file":{
+    "id": "ID",
+    "title": "Titel",
+    "name": "Name",
+    "group": "Gruppe"
+  },
+  "filelist":{
+    "title": "Dateien",
+    "createfile": "Neue Datei erstellen",
+    "nofiles": "Es sind keine Dateien gespeichert."
+  },
+  "fileview":{
+    "title": "Datei ansehen",
+    "upload": "Hochladen",
+    "download": "Herunterladen"
+  },
+  "navigation":{
+    "listfiles": "Dateien anzeigen",
+    "newfile": "Neue Datei"
+  }
+}
