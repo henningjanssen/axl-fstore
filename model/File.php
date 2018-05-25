@@ -60,6 +60,24 @@ class File{
       ->getResult();
   }
 
+  public static function getByNameGroup(string $name, string $group){
+    $em = Doctrine::getEntityManager();
+    $qb = $em->createQueryBuilder();
+    return $qb
+      ->select('f')
+      ->from(File::class, 'f')
+      ->where(
+        $qb->expr()->andX(
+          $qb->expr()->eq('f.name', ':name'),
+          $qb->expr()->eq('f.group', ':group')
+        )
+      )
+      ->setParameter('name', $name)
+      ->setParameter('group', strtolower($group))
+      ->getQuery()
+      ->getSingleResult();
+  }
+
   public function save(): void{
     $em = Doctrine::getEntityManager();
     $em->persist($this);
