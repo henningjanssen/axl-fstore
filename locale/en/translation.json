@@ -14,5 +14,9 @@
     "title": "View File",
     "upload": "Upload",
     "download": "Download"
+  },
+  "navigation":{
+    "listfiles": "List files",
+    "newfile": "New file"
   }
 }

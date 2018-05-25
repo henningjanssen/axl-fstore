@@ -8,9 +8,10 @@ abstract class BaseView extends PageView{
   protected $staticuri = "";
   protected $moduri = "";
   public function __construct(string $file, string $title = ""){
-    parent::__construct($file, $title, true);
+    parent::__construct($file, strlen($title)>0 ?"i18n:axl__fstore:$title" :"");
     $this->setModuleNavigation(array(
-      "List Files" => "/m/AXL/fstore/"
+      "i18n:axl__fstore:listfiles" => "/m/AXL/fstore/",
+      "i18n:axl__fstore:newfile" => "/m/AXL/fstore/file/new"
     ));
     $this->staticuri = "{$this->baseuri}/static/m/fstore";
     $this->moduri = "{$this->baseuri}/m/AXL/fstore";
