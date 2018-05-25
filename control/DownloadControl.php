@@ -10,7 +10,7 @@ class DownloadControl extends LoggedInPageControl{
   public function execute(): void{
     try{
       $file = File::get(intval($this->vars['id']));
-      (new StreamView($file->getContentStream(), $file->getName()));
+      (new StreamView($file->getContentStream(), $file->getName()))->render();
     }
     catch(\Exception $ex){
       (new ErrorView(404))->render();
