@@ -6,7 +6,7 @@ use \axl\fstore\model\File;
 
 class FileView extends BaseView{
   public function __construct(?File $file){
-    parent::__construct("@fstore/file.html", "fileview.title", true);
+    parent::__construct("@fstore/file.html", "axl__fstore:fileview.title", true);
     if($file === null){
       $file = array(
         "id" => -1,
