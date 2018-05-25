@@ -21,10 +21,13 @@
   <div class="form-group">
     <label for="upload" data-i18n="axl__fstore:fileview.upload"></label>
     {% include 'components/fileupload.html' with {'funame': 'upload', 'fuid': 'upload', 'fuaccept': ''} %}
+  </div>
+
+  <div>
     {% if file.id >= 0 %}
       <a href="{{moduri}}/file/{{file.id}}/download" data-i18n="axl__fstore:fileview.download" class="btn btn-primary" role="button"></a>
     {% endif %}
+    <button type="submit" class="btn btn-primary" data-i18n="common.save"></button>
   </div>
-  <button type="submit" class="btn btn-primary" data-i18n="common.save"></button>
 </form>
 {% endblock %}
