@@ -59,7 +59,7 @@ class FileControl extends LoggedInPageControl{
 
     // /file/new -> /file/<id>
     if(!($this->hasVar('id'))){
-      (new RedirectView("{$this->moduri}/file/{$file->getID()}"))->render();
+      (new RedirectView("m/AXL/fstore/file/{$file->getID()}"))->render();
       return;
     }
     (new FileView($file))->render();

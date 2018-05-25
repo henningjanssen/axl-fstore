@@ -18,7 +18,7 @@ class FileListControl extends LoggedInPageControl{
         $em->remove($del);
         $em->flush();
       }
-      $link = '/m/AXL/fstore/files';
+      $link = 'm/AXL/fstore/files';
       if($this->hasVar('group')){
         $link .= '/'.$this->vars['group'];
       }
